@@ -10,15 +10,6 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/icon-192x192.png">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105628644-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-105628644-2');
-</script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -29,8 +20,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>IMDB Ratings</title>
+    <style>
+      .loader{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+      }
+      .loader svg path,
+      .loader svg rect{
+          fill: #4FC3F7;
+      }
+  </style>
   </head>
   <body>
+      <div class="loader">
+          <svg x="0px" y="0px"
+               width="9rem" height="9rem" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;">
+              <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                  <animateTransform attributeName="transform"
+                                    type="rotate"
+                                    from="0 25 25"
+                                    to="360 25 25"
+                                    dur="0.8s"
+                                    repeatCount="indefinite"/>
+              </path>
+          </svg>
+      </div>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
@@ -45,5 +63,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105628644-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-105628644-2');
+    </script>
   </body>
 </html>
